@@ -11,7 +11,7 @@ const D = 44;
 export default function BookCover3D() {
   return (
     <div
-      className="relative flex items-center justify-center py-10"
+      className="relative flex h-[300px] items-center justify-center py-2 md:h-auto md:py-10"
       style={{ perspective: "1800px" }}
     >
       <div className="absolute inset-0 glow-gold scale-150" aria-hidden />
@@ -23,7 +23,7 @@ export default function BookCover3D() {
           opacity: { duration: 0.9, ease: "easeOut" },
           y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
         }}
-        className="relative scale-75 sm:scale-90 md:scale-100"
+        className="relative scale-[0.58] sm:scale-75 md:scale-100"
         style={{ width: W, height: H, transformStyle: "preserve-3d" }}
       >
         <motion.div

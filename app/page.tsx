@@ -3,6 +3,7 @@ import BookCover3D from "@/components/BookCover3D";
 import CtaButton from "@/components/CtaButton";
 import Ornament from "@/components/Ornament";
 import Reveal from "@/components/Reveal";
+import ScrollCue from "@/components/ScrollCue";
 import StickyBuyBar from "@/components/StickyBuyBar";
 import {
   author,
@@ -52,20 +53,20 @@ export default function Home() {
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-espresso text-cream">
         <div className="absolute inset-0 glow-gold" aria-hidden />
-        <div className="relative mx-auto grid min-h-screen max-w-6xl content-center items-center gap-14 px-6 py-16 md:grid-cols-2">
+        <div className="relative mx-auto grid max-w-6xl content-center items-center gap-6 px-6 pb-16 pt-10 md:min-h-screen md:grid-cols-2 md:gap-14 md:py-16">
           <div className="order-2 flex flex-col items-center gap-6 text-center md:order-1 md:items-start md:text-left">
             <Reveal>
-              <span className="font-script text-3xl text-gold-pale sm:text-4xl">
+              <span className="font-script text-2xl text-gold-pale sm:text-3xl md:text-4xl">
                 {hero.eyebrow}
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-wide sm:text-5xl">
+              <h1 className="font-display text-[1.7rem] font-semibold leading-tight tracking-wide sm:text-4xl md:text-5xl">
                 {hero.headline}
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="max-w-lg text-xl leading-relaxed opacity-90">
+              <p className="max-w-lg text-lg leading-relaxed opacity-90 md:text-xl">
                 {hero.sub}
               </p>
             </Reveal>
@@ -82,10 +83,11 @@ export default function Home() {
             <BookCover3D />
           </div>
         </div>
+        <ScrollCue />
       </section>
 
       {/* ============ A HISTÓRIA ============ */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+      <section id="historia" className="mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={story.script} title={story.title} />
         <div className="mt-12 flex flex-col gap-8">
           {story.fragments.map((f, i) => (
