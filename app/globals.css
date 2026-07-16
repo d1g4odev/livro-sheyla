@@ -59,6 +59,12 @@ body {
     radial-gradient(40% 32% at 4% 92%, rgba(78, 115, 178, 0.06) 0%, transparent 60%);
 }
 
+/* padrão minimalista de estrelinhas douradas (eco do ✦ da identidade) */
+.pattern-sparkle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112'%3E%3Cg fill='%23c9a227'%3E%3Cpath transform='translate(20 20) scale(0.55)' d='M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4L10 0z'/%3E%3Cpath transform='translate(76 72) scale(0.35)' d='M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4L10 0z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 112px 112px;
+}
+
 /* partículas de luz dourada (bokeh da capa) */
 .bokeh {
   background-image:

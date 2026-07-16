@@ -90,10 +90,10 @@ export default function Home() {
         <ScrollCue />
       </section>
 
-      {/* ============ A HISTÓRIA ============ */}
-      <section id="historia" className="relative overflow-hidden">
+      {/* ============ A HISTÓRIA + É PRA VOCÊ ============ */}
+      <div className="relative overflow-hidden">
         <Backdrop variant="cream" />
-        <div className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <section id="historia" className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={story.script} title={story.title} />
         <div className="mt-12 flex flex-col gap-8">
           {story.fragments.map((f, i) => (
@@ -113,13 +113,10 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
-        </div>
-      </section>
+        </section>
 
       {/* ============ É PRA VOCÊ SE ============ */}
-      <section className="relative overflow-hidden">
-        <Backdrop variant="cream" />
-        <div className="relative mx-auto max-w-3xl px-6 pb-20 md:pb-28">
+      <section className="relative mx-auto max-w-3xl px-6 pb-20 md:pb-28">
         <SectionHeader script={forYou.script} title={forYou.title} />
         <Reveal delay={0.1}>
           <ul className="mt-10 flex flex-col gap-4 rounded-xl border border-gold/25 bg-cream-dark/50 px-7 py-8 sm:px-10">
@@ -144,8 +141,8 @@ export default function Home() {
             foi escrita pensando em você.
           </p>
         </Reveal>
-        </div>
       </section>
+      </div>
 
       {/* ============ A JORNADA ============ */}
       <section className="relative overflow-hidden bg-cream-dark py-20 md:py-28">
@@ -209,10 +206,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ PRÉVIA ============ */}
-      <section className="relative overflow-hidden">
+      {/* ============ PRÉVIA + AUTORA ============ */}
+      <div className="relative overflow-hidden">
         <Backdrop variant="cream" />
-        <div className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <section className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={preview.script} title={preview.title} />
         <Reveal delay={0.1}>
           <p className="mt-8 text-center text-lg italic opacity-75">
@@ -253,13 +250,10 @@ export default function Home() {
             />
           </div>
         </Reveal>
-        </div>
       </section>
 
       {/* ============ AUTORA ============ */}
-      <section className="relative overflow-hidden">
-        <Backdrop variant="cream" />
-        <div className="relative mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <section className="relative mx-auto max-w-4xl px-6 pb-20 md:pb-28">
         <SectionHeader script={author.script} title={author.name} />
         <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
           {/* TODO: substituir monograma pela foto real da Sheyla quando chegar */}
@@ -281,8 +275,8 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
-        </div>
       </section>
+      </div>
 
       {/* ============ OFERTA ============ */}
       <section id="oferta" className="relative overflow-hidden bg-cream-dark py-20 md:py-28">

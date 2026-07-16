@@ -37,6 +37,7 @@ export default function Backdrop({
       ) : (
         <>
           <div className="wash-cream absolute inset-0" />
+          <div className="pattern-sparkle absolute inset-0 opacity-[0.13]" />
           <div className="grain absolute inset-0 opacity-[0.04]" />
         </>
       )}
