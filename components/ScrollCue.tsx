@@ -11,7 +11,7 @@ export default function ScrollCue() {
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
     >
-      <span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">
+      <span className="font-display text-xs uppercase tracking-[0.25em]">
         Conheça a história
       </span>
       <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>

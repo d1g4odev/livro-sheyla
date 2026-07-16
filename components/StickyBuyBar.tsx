@@ -34,16 +34,16 @@ export default function StickyBuyBar() {
               className="shrink-0 rounded-[2px] ring-1 ring-gold/40"
             />
             <div className="min-w-0 flex-1 text-cream">
-              <p className="truncate font-display text-[0.65rem] font-semibold uppercase tracking-[0.12em]">
+              <p className="truncate font-display text-xs font-semibold uppercase tracking-[0.1em]">
                 Sempre Quis Te Chamar de Pai
               </p>
-              <p className="text-sm italic opacity-80">
+              <p className="text-base italic opacity-90">
                 a partir de {PRECOS.ebook}
               </p>
             </div>
             <a
               href="#oferta"
-              className="shrink-0 rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-deep px-6 py-3 font-display text-xs font-bold uppercase tracking-[0.12em] text-espresso shadow-[0_8px_20px_-6px_rgba(201,162,39,0.7)]"
+              className="shrink-0 rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-deep px-6 py-3.5 font-display text-sm font-bold uppercase tracking-[0.1em] text-espresso shadow-[0_8px_20px_-6px_rgba(201,162,39,0.7)]"
             >
               Comprar
             </a>

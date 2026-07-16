@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BookCover3D from "@/components/BookCover3D";
+import JsonLd from "@/components/JsonLd";
 import CtaButton from "@/components/CtaButton";
 import Ornament from "@/components/Ornament";
 import Reveal from "@/components/Reveal";
@@ -50,6 +51,7 @@ function SectionHeader({
 export default function Home() {
   return (
     <main className="flex-1">
+      <JsonLd />
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-espresso text-cream">
         <div className="absolute inset-0 glow-gold" aria-hidden />
@@ -187,7 +189,7 @@ export default function Home() {
                   <blockquote className="max-w-2xl text-2xl italic leading-relaxed text-gold-pale sm:text-[1.7rem]">
                     {q.text}
                   </blockquote>
-                  <figcaption className="font-display text-xs uppercase tracking-[0.3em] text-cream/60">
+                  <figcaption className="font-display text-sm uppercase tracking-[0.25em] text-cream/75">
                     — {q.ref}
                   </figcaption>
                 </figure>
@@ -281,7 +283,7 @@ export default function Home() {
                   }`}
                 >
                   <span
-                    className={`mx-auto rounded-full px-4 py-1 font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${
+                    className={`mx-auto rounded-full px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.15em] ${
                       f.featured
                         ? "bg-gold text-espresso"
                         : "bg-espresso/8 text-espresso/70"
@@ -315,7 +317,7 @@ export default function Home() {
                   <div className="mt-auto flex flex-col items-center gap-3 pt-2">
                     <a
                       href={f.ctaHref}
-                      className="w-full rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-deep px-8 py-4 font-display text-sm font-bold uppercase tracking-[0.14em] text-espresso shadow-[0_12px_30px_-8px_rgba(201,162,39,0.65)] ring-1 ring-gold-pale/60 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
+                      className="w-full rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-deep px-8 py-4 font-display text-base font-bold uppercase tracking-[0.1em] text-espresso shadow-[0_12px_30px_-8px_rgba(201,162,39,0.65)] ring-1 ring-gold-pale/60 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                     >
                       {f.cta}
                     </a>
@@ -394,7 +396,7 @@ export default function Home() {
       </section>
 
       {/* ============ FOOTER ============ */}
-      <footer className="bg-[#170f04] py-8 text-center text-sm text-cream/50">
+      <footer className="bg-[#170f04] py-8 text-center text-base text-cream/70">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 px-6">
           <Image
             src="/livro/capa-800.png"
