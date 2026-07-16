@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Backdrop from "@/components/Backdrop";
 import BookCover3D from "@/components/BookCover3D";
 import JsonLd from "@/components/JsonLd";
 import CtaButton from "@/components/CtaButton";
@@ -54,6 +55,7 @@ export default function Home() {
       <JsonLd />
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-espresso text-cream">
+        <Backdrop variant="dark" imageOpacity={0.45} />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl content-center items-center gap-6 px-6 pb-16 pt-10 md:min-h-screen md:grid-cols-2 md:gap-14 md:py-16">
           <div className="order-2 flex flex-col items-center gap-6 text-center md:order-1 md:items-start md:text-left">
@@ -89,7 +91,9 @@ export default function Home() {
       </section>
 
       {/* ============ A HISTÓRIA ============ */}
-      <section id="historia" className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+      <section id="historia" className="relative overflow-hidden">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={story.script} title={story.title} />
         <div className="mt-12 flex flex-col gap-8">
           {story.fragments.map((f, i) => (
@@ -109,10 +113,13 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
+        </div>
       </section>
 
       {/* ============ É PRA VOCÊ SE ============ */}
-      <section className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
+      <section className="relative overflow-hidden">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-3xl px-6 pb-20 md:pb-28">
         <SectionHeader script={forYou.script} title={forYou.title} />
         <Reveal delay={0.1}>
           <ul className="mt-10 flex flex-col gap-4 rounded-xl border border-gold/25 bg-cream-dark/50 px-7 py-8 sm:px-10">
@@ -137,11 +144,13 @@ export default function Home() {
             foi escrita pensando em você.
           </p>
         </Reveal>
+        </div>
       </section>
 
       {/* ============ A JORNADA ============ */}
-      <section className="bg-cream-dark py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden bg-cream-dark py-20 md:py-28">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-6xl px-6">
           <SectionHeader script={journey.script} title={journey.title} />
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {journey.steps.map((s, i) => (
@@ -179,6 +188,7 @@ export default function Home() {
 
       {/* ============ TRECHOS ============ */}
       <section className="relative overflow-hidden bg-espresso py-20 text-cream md:py-28">
+        <Backdrop variant="dark" imageOpacity={0.22} />
         <div className="absolute inset-0 glow-gold opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-4xl px-6">
           <SectionHeader script={excerpts.script} title={excerpts.title} dark />
@@ -200,7 +210,9 @@ export default function Home() {
       </section>
 
       {/* ============ PRÉVIA ============ */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+      <section className="relative overflow-hidden">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={preview.script} title={preview.title} />
         <Reveal delay={0.1}>
           <p className="mt-8 text-center text-lg italic opacity-75">
@@ -241,10 +253,13 @@ export default function Home() {
             />
           </div>
         </Reveal>
+        </div>
       </section>
 
       {/* ============ AUTORA ============ */}
-      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <section className="relative overflow-hidden">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-4xl px-6 py-20 md:py-28">
         <SectionHeader script={author.script} title={author.name} />
         <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
           {/* TODO: substituir monograma pela foto real da Sheyla quando chegar */}
@@ -266,11 +281,13 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
+        </div>
       </section>
 
       {/* ============ OFERTA ============ */}
-      <section id="oferta" className="bg-cream-dark py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
+      <section id="oferta" className="relative overflow-hidden bg-cream-dark py-20 md:py-28">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-5xl px-6">
           <SectionHeader script={offer.script} title={offer.title} />
           <div className="mt-14 grid items-stretch gap-8 md:grid-cols-2">
             {offer.formats.map((f, i) => (
@@ -345,7 +362,9 @@ export default function Home() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+      <section className="relative overflow-hidden">
+        <Backdrop variant="cream" />
+        <div className="relative mx-auto max-w-3xl px-6 py-20 md:py-28">
         <SectionHeader script={faq.script} title={faq.title} />
         <div className="mt-12 flex flex-col gap-4">
           {faq.items.map((item, i) => (
@@ -364,10 +383,12 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
       {/* ============ CTA FINAL ============ */}
       <section className="relative overflow-hidden bg-espresso py-24 text-center text-cream md:py-32">
+        <Backdrop variant="dark" imageOpacity={0.35} />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-7 px-6">
           <Reveal>
