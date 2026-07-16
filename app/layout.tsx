@@ -66,10 +66,10 @@ export const metadata: Metadata = {
     siteName: "Sempre Quis Te Chamar de Pai",
     images: [
       {
-        url: "/livro/capa-og.jpg",
-        width: 1600,
-        height: 900,
-        alt: "Capa do livro Sempre Quis Te Chamar de Pai, de Sheyla Gracielle",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Livro Sempre Quis Te Chamar de Pai, de Sheyla Gracielle — ebook e livro físico",
       },
     ],
     locale: "pt_BR",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "Sempre Quis Te Chamar de Pai — Livro de Sheyla Gracielle",
     description:
       "Testemunho real de fé, perdão e restauração. Ebook e livro físico.",
-    images: ["/livro/capa-og.jpg"],
+    images: ["/og-image.jpg"],
   },
 };
 
