@@ -3,7 +3,8 @@ import Image from "next/image";
 /**
  * Foto da autora fundida ao fundo da seção escura.
  * Desktop (md+): ancorada num lado, máscara horizontal+vertical.
- * Mobile: faixa no topo ou na base da seção, máscara vertical.
+ * Mobile: faixa no topo/base (máscara vertical) ou "full" (foto ambiente
+ * preenchendo a seção inteira, dissolvida nas quatro bordas em vinheta).
  * Leve blur + véu espresso fazem a foto "nascer" do fundo sem borda perceptível.
  * A seção pai precisa de `relative overflow-hidden`.
  */
@@ -21,7 +22,7 @@ export default function PhotoBleed({
   side: "left" | "right";
   opacity?: number;
   position?: string;
-  mobile?: "top" | "bottom";
+  mobile?: "top" | "bottom" | "full";
   mobileSrc?: string;
   mobilePosition?: string;
   mobileOpacity?: number;
@@ -58,7 +59,30 @@ export default function PhotoBleed({
           />
         </div>
       </div>
-      {mobile && (
+      {mobile === "full" && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 md:hidden"
+        >
+          <div className="photo-fade-vignette absolute inset-0">
+            <Image
+              src={mobileSrc ?? src}
+              alt=""
+              fill
+              sizes="(max-width: 767px) 100vw, 1px"
+              quality={70}
+              className="object-cover blur-[2px] saturate-[1.1]"
+              style={{
+                opacity: mobileOpacity ?? opacity,
+                objectPosition: mobilePosition ?? position,
+              }}
+            />
+            {/* véu espresso uniforme para casar com o fundo e manter o texto legível */}
+            <div className="absolute inset-0 bg-espresso/45" />
+          </div>
+        </div>
+      )}
+      {(mobile === "top" || mobile === "bottom") && (
         <div
           aria-hidden
           className={`pointer-events-none absolute inset-x-0 h-[40%] max-h-80 md:hidden ${

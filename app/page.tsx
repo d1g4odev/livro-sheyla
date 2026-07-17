@@ -62,9 +62,9 @@ export default function Home() {
           side="right"
           opacity={0.42}
           position="50% 25%"
-          mobile="bottom"
-          mobilePosition="50% 10%"
-          mobileOpacity={0.5}
+          mobile="full"
+          mobilePosition="50% 18%"
+          mobileOpacity={0.34}
         />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl content-center items-center gap-6 px-6 pb-16 pt-10 md:min-h-screen md:grid-cols-2 md:gap-14 md:py-16">

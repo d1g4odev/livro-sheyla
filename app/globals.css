@@ -77,6 +77,18 @@ body {
   mask-image: linear-gradient(to bottom, black 0%, black 48%, rgba(0, 0, 0, 0.6) 74%, transparent 98%);
 }
 
+/* fade nas quatro bordas — foto ambiente que se dissolve no fundo por todos os lados */
+.photo-fade-vignette {
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 22%, black 74%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 22%, black 74%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
 /* ruído de papel/filme */
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
