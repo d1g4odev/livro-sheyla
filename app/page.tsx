@@ -62,6 +62,10 @@ export default function Home() {
           side="right"
           opacity={0.42}
           position="50% 22%"
+          mobile="bottom"
+          mobileSrc="/livro/sheyla-avatar.jpg"
+          mobilePosition="50% 55%"
+          mobileOpacity={0.5}
         />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl content-center items-center gap-6 px-6 pb-16 pt-10 md:min-h-screen md:grid-cols-2 md:gap-14 md:py-16">
@@ -198,6 +202,9 @@ export default function Home() {
           side="left"
           opacity={0.38}
           position="50% 18%"
+          mobile="bottom"
+          mobilePosition="50% 10%"
+          mobileOpacity={0.52}
         />
         <div className="absolute inset-0 glow-gold opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-4xl px-6">
@@ -407,6 +414,9 @@ export default function Home() {
           side="right"
           opacity={0.4}
           position="50% 12%"
+          mobile="bottom"
+          mobilePosition="50% 35%"
+          mobileOpacity={0.55}
         />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-7 px-6">
