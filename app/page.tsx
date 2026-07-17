@@ -4,6 +4,7 @@ import BookCover3D from "@/components/BookCover3D";
 import JsonLd from "@/components/JsonLd";
 import CtaButton from "@/components/CtaButton";
 import Ornament from "@/components/Ornament";
+import PhotoBleed from "@/components/PhotoBleed";
 import Reveal from "@/components/Reveal";
 import ScrollCue from "@/components/ScrollCue";
 import StickyBuyBar from "@/components/StickyBuyBar";
@@ -56,6 +57,12 @@ export default function Home() {
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-espresso text-cream">
         <Backdrop variant="dark" imageOpacity={0.45} />
+        <PhotoBleed
+          src="/livro/sheyla-1.jpg"
+          side="right"
+          opacity={0.42}
+          position="50% 22%"
+        />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl content-center items-center gap-6 px-6 pb-16 pt-10 md:min-h-screen md:grid-cols-2 md:gap-14 md:py-16">
           <div className="order-2 flex flex-col items-center gap-6 text-center md:order-1 md:items-start md:text-left">
@@ -186,6 +193,12 @@ export default function Home() {
       {/* ============ TRECHOS ============ */}
       <section className="relative overflow-hidden bg-espresso py-20 text-cream md:py-28">
         <Backdrop variant="dark" imageOpacity={0.22} />
+        <PhotoBleed
+          src="/livro/sheyla-2.jpg"
+          side="left"
+          opacity={0.38}
+          position="50% 18%"
+        />
         <div className="absolute inset-0 glow-gold opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-4xl px-6">
           <SectionHeader script={excerpts.script} title={excerpts.title} dark />
@@ -256,10 +269,16 @@ export default function Home() {
       <section className="relative mx-auto max-w-4xl px-6 pb-20 md:pb-28">
         <SectionHeader script={author.script} title={author.name} />
         <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
-          {/* TODO: substituir monograma pela foto real da Sheyla quando chegar */}
           <Reveal className="shrink-0">
-            <div className="flex size-44 items-center justify-center rounded-full border-2 border-gold/50 bg-gradient-to-br from-espresso to-espresso-light shadow-[0_20px_40px_-20px_rgba(34,23,8,0.6)]">
-              <span className="font-script text-6xl text-gold-pale">SG</span>
+            <div className="relative size-44 overflow-hidden rounded-full border-2 border-gold/50 shadow-[0_20px_40px_-20px_rgba(34,23,8,0.6)]">
+              <Image
+                src="/livro/sheyla-avatar.jpg"
+                alt="Sheyla Gracielle"
+                fill
+                sizes="176px"
+                quality={80}
+                className="object-cover"
+              />
             </div>
           </Reveal>
           <div className="flex flex-col gap-5 text-center md:text-left">
@@ -383,6 +402,12 @@ export default function Home() {
       {/* ============ CTA FINAL ============ */}
       <section className="relative overflow-hidden bg-espresso py-24 text-center text-cream md:py-32">
         <Backdrop variant="dark" imageOpacity={0.35} />
+        <PhotoBleed
+          src="/livro/sheyla-2.jpg"
+          side="right"
+          opacity={0.4}
+          position="50% 12%"
+        />
         <div className="absolute inset-0 glow-gold" aria-hidden />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-7 px-6">
           <Reveal>
