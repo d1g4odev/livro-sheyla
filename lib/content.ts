@@ -1,22 +1,24 @@
 // ============================================================
 // TODO — trocar antes de publicar:
-//  - links de checkout (Kiwify/Hotmart/Mercado Pago)
 //  - links da Amazon (ebook Kindle e livro físico)
 //  - número do WhatsApp da Sheyla
-//  - preços reais dos dois formatos
+//  - preços reais dos dois formatos (em lib/checkout.ts — fonte única)
 // ============================================================
 
+import { PRODUTOS } from "./checkout";
+
 export const LINKS = {
-  checkoutEbook: "#oferta", // TODO: link do checkout do ebook
-  checkoutFisico: "#oferta", // TODO: link do checkout do livro físico
+  checkoutEbook: "/checkout?produto=ebook",
+  checkoutFisico: "/checkout?produto=fisico",
   amazonEbook: "#oferta", // TODO: link do ebook na Amazon (Kindle)
   whatsapp:
     "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20o%20livro%20Sempre%20Quis%20Te%20Chamar%20de%20Pai!", // TODO: número real
 };
 
+// Preços vêm de lib/checkout.ts para não divergir do valor cobrado no servidor.
 export const PRECOS = {
-  ebook: "R$ 29,90", // TODO: confirmar preço
-  fisico: "R$ 59,90", // TODO: confirmar preço
+  ebook: PRODUTOS.ebook.precoLabel,
+  fisico: PRODUTOS.fisico.precoLabel,
 };
 
 export const hero = {
