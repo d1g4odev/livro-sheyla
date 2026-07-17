@@ -58,13 +58,12 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso text-cream">
         <Backdrop variant="dark" imageOpacity={0.45} />
         <PhotoBleed
-          src="/livro/sheyla-1.jpg"
+          src="/livro/sheyla-3.jpg"
           side="right"
           opacity={0.42}
-          position="50% 22%"
+          position="50% 25%"
           mobile="bottom"
-          mobileSrc="/livro/sheyla-avatar.jpg"
-          mobilePosition="50% 55%"
+          mobilePosition="50% 10%"
           mobileOpacity={0.5}
         />
         <div className="absolute inset-0 glow-gold" aria-hidden />
@@ -198,12 +197,12 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-20 text-cream md:py-28">
         <Backdrop variant="dark" imageOpacity={0.22} />
         <PhotoBleed
-          src="/livro/sheyla-2.jpg"
+          src="/livro/sheyla-3.jpg"
           side="left"
-          opacity={0.38}
-          position="50% 18%"
+          opacity={0.4}
+          position="50% 25%"
           mobile="bottom"
-          mobilePosition="50% 10%"
+          mobilePosition="50% 25%"
           mobileOpacity={0.52}
         />
         <div className="absolute inset-0 glow-gold opacity-70" aria-hidden />
@@ -279,7 +278,7 @@ export default function Home() {
           <Reveal className="shrink-0">
             <div className="relative size-44 overflow-hidden rounded-full border-2 border-gold/50 shadow-[0_20px_40px_-20px_rgba(34,23,8,0.6)]">
               <Image
-                src="/livro/sheyla-avatar.jpg"
+                src="/livro/sheyla-rosto.jpg"
                 alt="Sheyla Gracielle"
                 fill
                 sizes="176px"
@@ -410,12 +409,12 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-24 text-center text-cream md:py-32">
         <Backdrop variant="dark" imageOpacity={0.35} />
         <PhotoBleed
-          src="/livro/sheyla-2.jpg"
+          src="/livro/sheyla-3.jpg"
           side="right"
-          opacity={0.4}
-          position="50% 12%"
+          opacity={0.42}
+          position="50% 20%"
           mobile="bottom"
-          mobilePosition="50% 35%"
+          mobilePosition="50% 15%"
           mobileOpacity={0.55}
         />
         <div className="absolute inset-0 glow-gold" aria-hidden />
