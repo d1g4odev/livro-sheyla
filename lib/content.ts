@@ -126,6 +126,7 @@ export const author = {
     "Deste vale nasceu um chamado confirmado por profecia: escrever. Este livro é a pedra do seu encontro — o altar onde ela registra o que o Pai fez, para que muitos encontrem, neste testemunho, o caminho de volta para a aliança.",
   ],
   verse: "“Não desprezes o dom que há em ti, o qual te foi dado por profecia.” — 1 Timóteo 4:14",
+  videoTitle: "Uma palavra da Sheyla pra você",
 };
 
 export const offer = {

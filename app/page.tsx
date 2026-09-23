@@ -58,7 +58,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso text-cream">
         <Backdrop variant="dark" imageOpacity={0.45} />
         <PhotoBleed
-          src="/livro/sheyla-3.jpg"
+          src="/livro/sheyla-biblia.jpg"
           side="right"
           opacity={0.42}
           position="50% 25%"
@@ -197,7 +197,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-20 text-cream md:py-28">
         <Backdrop variant="dark" imageOpacity={0.22} />
         <PhotoBleed
-          src="/livro/sheyla-3.jpg"
+          src="/livro/sheyla-biblia.jpg"
           side="left"
           opacity={0.4}
           position="50% 25%"
@@ -300,6 +300,25 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
+        <Reveal delay={0.1}>
+          <figure className="mt-16 flex flex-col items-center gap-5">
+            <figcaption className="text-center font-script text-3xl text-gold-deep sm:text-4xl">
+              {author.videoTitle}
+            </figcaption>
+            <div className="w-full max-w-[340px] overflow-hidden rounded-2xl border-2 border-gold/50 bg-espresso shadow-[0_30px_60px_-25px_rgba(34,23,8,0.6)]">
+              <video
+                src="/livro/video-sheyla.mp4"
+                poster="/livro/video-sheyla-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+                className="aspect-[72/109] w-full object-cover"
+              >
+                Seu navegador não suporta vídeo.
+              </video>
+            </div>
+          </figure>
+        </Reveal>
       </section>
       </div>
 
@@ -409,7 +428,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-24 text-center text-cream md:py-32">
         <Backdrop variant="dark" imageOpacity={0.35} />
         <PhotoBleed
-          src="/livro/sheyla-3.jpg"
+          src="/livro/sheyla-biblia.jpg"
           side="right"
           opacity={0.42}
           position="50% 20%"
