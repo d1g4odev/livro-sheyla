@@ -22,7 +22,7 @@ export const PRODUTOS: Record<ProdutoId, Produto> = {
   ebook: {
     id: "ebook",
     nome: "Ebook",
-    titulo: "Sempre Quis Te Chamar de Pai — Ebook",
+    titulo: "Sempre Quis Te Chamar de Pai (Ebook)",
     descricao: "Livro digital · leitura imediata (PDF + ePub)",
     preco: 29.9,
     precoLabel: "R$ 29,90",
@@ -33,7 +33,7 @@ export const PRODUTOS: Record<ProdutoId, Produto> = {
   fisico: {
     id: "fisico",
     nome: "Livro físico",
-    titulo: "Sempre Quis Te Chamar de Pai — Edição física",
+    titulo: "Sempre Quis Te Chamar de Pai (Edição física)",
     descricao: "Edição impressa · capa premium do jardim dourado",
     preco: 59.9,
     precoLabel: "R$ 59,90",

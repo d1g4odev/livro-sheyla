@@ -27,7 +27,7 @@ export const PRECOS = {
 export const hero = {
   eyebrow: "Um testemunho de fé, perdão e restauração",
   headline: "Você também cresceu sentindo que precisava merecer amor?",
-  sub: "A história real de uma mulher que conheceu a rejeição, a traição e o vazio — até descobrir um Pai que a esperava do outro lado da dor.",
+  sub: "A história real de uma mulher que conheceu a rejeição, a traição e o vazio, até descobrir um Pai que a esperava do outro lado da dor.",
   cta: "Quero ler este testemunho",
   ctaTrigger: "Ebook ou livro físico · leitura imediata no digital",
 };
@@ -36,7 +36,7 @@ export const story = {
   script: "Talvez essa também seja a sua história",
   title: "Por fora, tudo parecia perfeito",
   fragments: [
-    "“Cresci acreditando que não era suficiente — e essa ferida me moldou.”",
+    "“Cresci acreditando que não era suficiente, e essa ferida me moldou.”",
     "“Vivi nove anos o doce e o amargo de um casamento sem propósito. Parecia perfeito por fora. Mas por dentro havia rachaduras invisíveis.”",
     "“O que eu mais temia, aconteceu comigo: a traição e o divórcio. O chão abriu. O ar sumiu. A alma despencou.”",
   ],
@@ -49,7 +49,7 @@ export const forYou = {
   items: [
     "Você cresceu sentindo que precisava competir por um lugar que parecia já estar perdido.",
     "Uma traição ou um divórcio partiu a sua história em antes e depois.",
-    "Por fora está tudo certo — mas por dentro existe um vazio que nada preenche.",
+    "Por fora está tudo certo, mas por dentro existe um vazio que nada preenche.",
     "Você sente que Deus é real, mas nunca soube como chamá-Lo de Pai.",
     "Você precisa acreditar que é possível recomeçar das cinzas.",
   ],
@@ -58,25 +58,25 @@ export const forYou = {
 export const stats = [
   { n: "22", label: "capítulos de testemunho real" },
   { n: "116", label: "páginas escritas com verdade vivida" },
-  { n: "2", label: "formatos — ebook e livro impresso" },
+  { n: "2", label: "formatos: ebook e livro impresso" },
 ];
 
 export const preview = {
   script: "Leia agora",
   title: "As primeiras páginas",
   intro:
-    "“Do Convite” — a carta que abre o livro, exatamente como você vai recebê-la:",
+    "“Do Convite”, a carta que abre o livro, exatamente como você vai recebê-la:",
   salutation: "Caro leitor,",
   paragraphs: [
     "Antes de qualquer palavra, preciso te dizer algo com sinceridade: eu não cheguei até aqui sozinha. E talvez você também não tenha chegado até aqui por acaso.",
     "Há histórias que nos empurram, dores que nos despertam, chamados que nos puxam pela alma e caminhos que só fazem sentido quando olhamos para trás e percebemos que Alguém estava nos conduzindo o tempo inteiro.",
     "Se você abriu este livro, existe um motivo maior do que a curiosidade. Desde o início da minha caminhada, compreendi que no mundo espiritual não existe coincidência. Eu creio que assim como existiu um convite para contar uma história que, no fundo, nunca foi só minha, este livro também é um chamado de Deus, para um propósito maior, afinal sou mais uma testemunha, de que existe um Pai e Ele sempre nos convida a conhecê-lo das mais variadas formas.",
-    "E foi exatamente esse Pai que me trouxe até aqui — não para falar de religião, mas de encontros. Não para falar de perfeição, mas de feridas restauradas. Não para falar sobre um Deus distante, mas sobre um Deus que se aproxima.",
+    "E foi exatamente esse Pai que me trouxe até aqui. Não para falar de religião, mas de encontros. Não para falar de perfeição, mas de feridas restauradas. Não para falar sobre um Deus distante, mas sobre um Deus que se aproxima.",
   ],
   signatureLine: "Com carinho,",
   signature: "Sheyla Gracielle",
   cta: "Continuar lendo no livro completo",
-  ctaTrigger: "A história começa no capítulo 1 — “O Ano Em Que Tudo Começou A Secar”",
+  ctaTrigger: "A história começa no capítulo 1: “O Ano Em Que Tudo Começou A Secar”",
 };
 
 export const journey = {
@@ -86,7 +86,7 @@ export const journey = {
     {
       numeral: "I",
       name: "O Vale",
-      desc: "A ferida da rejeição na infância, o casamento que ruiu e o Salmo 55 ganhando carne, sangue e lágrimas — a dor contada sem máscaras.",
+      desc: "A ferida da rejeição na infância, o casamento que ruiu e o Salmo 55 ganhando carne, sangue e lágrimas. A dor contada sem máscaras.",
     },
     {
       numeral: "II",
@@ -124,11 +124,11 @@ export const author = {
   script: "Quem escreve",
   name: "Sheyla Gracielle",
   bio: [
-    "Primeira filha, primeira neta — e, por muitos anos, uma mulher que não sabia como chamar Deus de Pai.",
+    "Primeira filha, primeira neta e, por muitos anos, uma mulher que não sabia como chamar Deus de Pai.",
     "Formada em Direito para realizar o sonho do pai, construiu a casa, o casamento e a vida idealizada, até o dia em que tudo ruiu e o vazio falou mais alto que as conquistas.",
-    "Deste vale nasceu um chamado confirmado por profecia: escrever. Este livro é a pedra do seu encontro — o altar onde ela registra o que o Pai fez, para que muitos encontrem, neste testemunho, o caminho de volta para a aliança.",
+    "Deste vale nasceu um chamado confirmado por profecia: escrever. Este livro é a pedra do seu encontro, o altar onde ela registra o que o Pai fez, para que muitos encontrem, neste testemunho, o caminho de volta para a aliança.",
   ],
-  verse: "“Não desprezes o dom que há em ti, o qual te foi dado por profecia.” — 1 Timóteo 4:14",
+  verse: "“Não desprezes o dom que há em ti, o qual te foi dado por profecia.” (1 Timóteo 4:14)",
   videoTitle: "Uma palavra da Sheyla pra você",
 };
 
@@ -155,7 +155,7 @@ export const offer = {
       name: "Livro físico",
       price: PRECOS.fisico,
       bullets: [
-        "Capa premium — a mesma do jardim dourado",
+        "Capa premium, a mesma do jardim dourado",
         "Frete grátis para todo o Brasil",
         "Perfeito para presentear alguém que precisa dessa palavra",
       ],
@@ -177,15 +177,15 @@ export const faq = {
     },
     {
       q: "Em quanto tempo o livro físico chega?",
-      a: "O envio é feito para todo o Brasil. O prazo aparece no checkout de acordo com o seu CEP — e você pode acompanhar o rastreamento.",
+      a: "O envio é feito para todo o Brasil. O prazo aparece no checkout de acordo com o seu CEP, e você pode acompanhar o rastreamento.",
     },
     {
       q: "Esse livro é para mim?",
-      a: "Se você já carregou rejeição, viveu uma traição, sente um vazio que nada preenche ou simplesmente deseja conhecer Deus como Pai — sim, ele foi escrito para você.",
+      a: "Se você já carregou rejeição, viveu uma traição, sente um vazio que nada preenche ou simplesmente deseja conhecer Deus como Pai, este livro foi escrito para você.",
     },
     {
       q: "Posso dar de presente?",
-      a: "Pode — e é um dos presentes mais bonitos que alguém em um vale pode receber. No pedido pelo WhatsApp, é possível combinar uma dedicatória da autora.",
+      a: "Pode, sim! É um dos presentes mais bonitos que alguém em um vale pode receber. No pedido pelo WhatsApp, é possível combinar uma dedicatória da autora.",
     },
     {
       q: "E se eu não gostar?",
@@ -197,7 +197,7 @@ export const faq = {
 export const finalCta = {
   script: "Voe",
   title: "Há um Pai esperando do outro lado da dor",
-  sub: "“Que este livro desperte filhos que, assim como eu, sempre quiseram Te chamar de Pai.” — da Oração de Abertura",
+  sub: "“Que este livro desperte filhos que, assim como eu, sempre quiseram Te chamar de Pai.” (da Oração de Abertura)",
   cta: "Quero ler este testemunho",
   ctaTrigger: "Ebook com leitura imediata · livro físico em todo o Brasil",
 };

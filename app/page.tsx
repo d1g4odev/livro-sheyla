@@ -216,7 +216,7 @@ export default function Home() {
                     {q.text}
                   </blockquote>
                   <figcaption className="font-display text-sm uppercase tracking-[0.25em] text-cream/75">
-                    — {q.ref}
+                    {q.ref}
                   </figcaption>
                 </figure>
               </Reveal>

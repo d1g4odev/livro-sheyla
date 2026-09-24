@@ -73,7 +73,7 @@ async function enviarEmailPedido(p: MpPayment) {
     process.env.ORDER_EMAIL_FROM ||
     "Pedidos Sempre Quis Te Chamar de Pai <onboarding@resend.dev>";
   if (!key || !to) {
-    console.warn("RESEND_API_KEY/ORDER_EMAIL ausentes — e-mail não enviado");
+    console.warn("RESEND_API_KEY/ORDER_EMAIL ausentes, e-mail não enviado");
     return;
   }
 
@@ -96,7 +96,7 @@ async function enviarEmailPedido(p: MpPayment) {
       ? "Cartão de crédito"
       : p.payment_method_id === "pix"
         ? "Pix"
-        : p.payment_type_id || "—";
+        : p.payment_type_id || "não informado";
 
   const itemNome = isEbook
     ? "Ebook (arquivo digital)"
@@ -111,20 +111,20 @@ async function enviarEmailPedido(p: MpPayment) {
     : `
     <h3 style="color:#9a7b1c;margin-bottom:4px">Endereço de entrega</h3>
     <p style="margin-top:0">
-      ${m.endereco || ""}, ${m.numero || ""}${m.complemento ? " - " + m.complemento : ""}<br>
+      ${m.endereco || ""}, ${m.numero || ""}${m.complemento ? ", " + m.complemento : ""}<br>
       ${m.bairro || ""}${m.referencia ? " (ref: " + m.referencia + ")" : ""}<br>
-      ${m.cidade || ""} / ${m.uf || ""} — CEP ${m.cep || ""}
+      ${m.cidade || ""} / ${m.uf || ""}, CEP ${m.cep || ""}
     </p>`;
 
   const html = `
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto;color:#221708">
-    <h2 style="color:#9a7b1c">✨ Novo pedido — Sempre Quis Te Chamar de Pai</h2>
+    <h2 style="color:#9a7b1c">✨ Novo pedido do livro Sempre Quis Te Chamar de Pai</h2>
     <p style="font-size:16px"><strong>Pagamento APROVADO.</strong> ${acao} 🎉</p>
     <h3 style="color:#9a7b1c;margin-bottom:4px">Comprador</h3>
     <p style="margin-top:0">
-      <strong>Nome:</strong> ${m.nome || "—"}<br>
-      <strong>E-mail:</strong> ${m.email || "—"}<br>
-      <strong>WhatsApp:</strong> ${m.whatsapp || "—"}
+      <strong>Nome:</strong> ${m.nome || "não informado"}<br>
+      <strong>E-mail:</strong> ${m.email || "não informado"}<br>
+      <strong>WhatsApp:</strong> ${m.whatsapp || "não informado"}
     </p>
     ${blocoEndereco}
     <h3 style="color:#9a7b1c;margin-bottom:4px">Pedido</h3>
@@ -135,10 +135,10 @@ async function enviarEmailPedido(p: MpPayment) {
       <strong>ID do pagamento:</strong> ${p.id}
     </p>
     <hr style="border:none;border-top:1px solid #e6dcc2;margin:20px 0">
-    <p style="font-size:12px;color:#998">E-mail automático do site — pagamento confirmado pelo Mercado Pago.</p>
+    <p style="font-size:12px;color:#998">E-mail automático do site. O pagamento foi confirmado pelo Mercado Pago.</p>
   </div>`;
 
-  const subject = `${isEbook ? "📎" : "📦"} Pedido aprovado (${isEbook ? "ebook" : "físico"}) — ${String(raw.nome || "cliente")} · ${valor}`;
+  const subject = `${isEbook ? "📎" : "📦"} Pedido aprovado (${isEbook ? "ebook" : "físico"}): ${String(raw.nome || "cliente")} · ${valor}`;
 
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",

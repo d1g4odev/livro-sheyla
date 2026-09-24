@@ -174,7 +174,7 @@ export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
                 <div>
                   <label className={label} htmlFor="uf">UF *</label>
                   <select id="uf" className={input} value={f.uf} onChange={set("uf")} required>
-                    <option value="" disabled>—</option>
+                    <option value="" disabled>UF</option>
                     {UFS.map((u) => <option key={u} value={u}>{u}</option>)}
                   </select>
                 </div>
@@ -197,7 +197,7 @@ export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
           {loading ? "Redirecionando para o pagamento seguro…" : "Finalizar compra →"}
         </button>
         <p className="mt-4 text-center text-sm italic text-espresso/60">
-          🔒 Pagamento seguro via Mercado Pago — Pix ou Cartão em até 12x
+          🔒 Pagamento seguro via Mercado Pago, no Pix ou no cartão em até 12x
         </p>
       </form>
 

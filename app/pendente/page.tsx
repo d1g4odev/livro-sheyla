@@ -15,7 +15,7 @@ export default function PendentePage() {
       cta={{ href: "/", label: "Voltar ao início" }}
     >
       <p>
-        Recebemos seu pedido! O pagamento ainda está sendo confirmado — isso é
+        Recebemos seu pedido! O pagamento ainda está sendo confirmado, isso é
         normal com Pix e boletos, que podem levar alguns minutos.
       </p>
       <p>

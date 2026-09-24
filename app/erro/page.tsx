@@ -15,7 +15,7 @@ export default function ErroPage() {
       cta={{ href: "/#oferta", label: "Tentar novamente" }}
     >
       <p>
-        O pagamento não foi concluído — pode ter sido um problema com o cartão ou
+        O pagamento não foi concluído. Pode ter sido um problema com o cartão ou
         a transação foi cancelada. Nenhum valor foi cobrado.
       </p>
       <p>
