@@ -278,7 +278,7 @@ export default function Home() {
           <Reveal className="shrink-0">
             <div className="relative size-44 overflow-hidden rounded-full border-2 border-gold/50 shadow-[0_20px_40px_-20px_rgba(34,23,8,0.6)]">
               <Image
-                src="/livro/sheyla-avatar.jpg"
+                src="/livro/sheyla-rosto-hd.jpg"
                 alt="Sheyla Gracielle"
                 fill
                 sizes="176px"
