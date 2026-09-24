@@ -1,14 +1,13 @@
 // ============================================================
 // TODO — trocar antes de publicar:
-//  - links da Amazon (ebook Kindle e livro físico)
 //  - número do WhatsApp da Sheyla
 //  - preços reais dos dois formatos (em lib/checkout.ts — fonte única)
 // ============================================================
 
 import { PRODUTOS } from "./checkout";
 
-// TODO: link do ebook na Amazon (Kindle)
-const AMAZON_EBOOK = "#oferta";
+// Ebook na Amazon (Kindle)
+const AMAZON_EBOOK = "https://www.amazon.com.br/dp/B0HHKGKJ5Z";
 
 export const LINKS = {
   checkoutFisico: "/checkout?produto=fisico",
