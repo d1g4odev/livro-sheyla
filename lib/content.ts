@@ -7,10 +7,14 @@
 
 import { PRODUTOS } from "./checkout";
 
+// TODO: link do ebook na Amazon (Kindle)
+const AMAZON_EBOOK = "#oferta";
+
 export const LINKS = {
-  checkoutEbook: "/checkout?produto=ebook",
   checkoutFisico: "/checkout?produto=fisico",
-  amazonEbook: "#oferta", // TODO: link do ebook na Amazon (Kindle)
+  // O ebook é vendido na Amazon: o botão só redireciona.
+  checkoutEbook: AMAZON_EBOOK,
+  amazonEbook: AMAZON_EBOOK,
   whatsapp:
     "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20o%20livro%20Sempre%20Quis%20Te%20Chamar%20de%20Pai!", // TODO: número real
 };
@@ -132,20 +136,20 @@ export const author = {
 export const offer = {
   script: "Garanta o seu",
   title: "Escolha como quer ler",
-  guarantee: "Compra segura · 7 dias de garantia incondicional no digital",
+  guarantee: "Livro físico com pagamento seguro via Mercado Pago · ebook vendido pela Amazon",
   formats: [
     {
       tag: "Leitura imediata",
       name: "Ebook",
       price: PRECOS.ebook,
       bullets: [
-        "Receba agora no seu e-mail",
-        "Leia no celular, tablet ou Kindle",
-        "Acesso vitalício ao arquivo",
+        "Leitura imediata no Kindle",
+        "Leia no celular, tablet ou computador (app Kindle gratuito)",
+        "Compra segura pela Amazon",
       ],
-      cta: "Comprar o ebook",
+      cta: "Comprar o ebook na Amazon",
       ctaHref: LINKS.checkoutEbook,
-      secondary: { label: "Prefiro comprar na Amazon", href: LINKS.amazonEbook },
+      secondary: { label: "Dúvidas? Fale com a Sheyla", href: LINKS.whatsapp },
     },
     {
       tag: "Edição impressa",
@@ -153,7 +157,7 @@ export const offer = {
       price: PRECOS.fisico,
       bullets: [
         "Capa premium — a mesma do jardim dourado",
-        "Receba em casa, em todo o Brasil",
+        "Frete grátis para todo o Brasil",
         "Perfeito para presentear alguém que precisa dessa palavra",
       ],
       cta: "Comprar o livro físico",

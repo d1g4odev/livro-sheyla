@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { PRODUTOS, type ProdutoId } from "@/lib/checkout";
+import { PRODUTOS, QTD_MAX, formatBRL, type ProdutoId } from "@/lib/checkout";
 
 const UFS = [
   "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB",
@@ -32,6 +32,8 @@ const VAZIO: Form = {
 export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
   const produto = PRODUTOS[produtoId];
   const [f, setF] = useState<Form>(VAZIO);
+  const [qtd, setQtd] = useState(1);
+  const total = formatBRL(produto.preco * qtd);
   const [loading, setLoading] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
@@ -70,7 +72,7 @@ export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
       const r = await fetch("/api/create-preference", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ produto: produto.id, ...f }),
+        body: JSON.stringify({ produto: produto.id, qtd, ...f }),
       });
       const d = await r.json();
       if (!r.ok || !d.init_point) {
@@ -218,12 +220,37 @@ export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
               <p className="mt-1 text-sm leading-snug text-espresso/70">
                 {produto.descricao}
               </p>
+              {produto.precisaEndereco && (
+                <div className="mt-3 inline-flex items-center rounded-lg border border-gold/30 bg-white">
+                  <button
+                    type="button"
+                    aria-label="Diminuir quantidade"
+                    onClick={() => setQtd((q) => Math.max(1, q - 1))}
+                    disabled={qtd <= 1}
+                    className="px-3 py-1.5 text-lg text-espresso disabled:opacity-30"
+                  >
+                    −
+                  </button>
+                  <span className="min-w-8 text-center font-display text-base font-semibold text-espresso" aria-live="polite">
+                    {qtd}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label="Aumentar quantidade"
+                    onClick={() => setQtd((q) => Math.min(QTD_MAX, q + 1))}
+                    disabled={qtd >= QTD_MAX}
+                    className="px-3 py-1.5 text-lg text-espresso disabled:opacity-30"
+                  >
+                    +
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           <div className="mt-5 space-y-2 border-t border-gold/20 pt-4 text-espresso/80">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>{produto.precoLabel}</span>
+              <span>{total}</span>
             </div>
             {produto.precisaEndereco && (
               <div className="flex justify-between">
@@ -233,7 +260,7 @@ export default function CheckoutForm({ produtoId }: { produtoId: ProdutoId }) {
             )}
             <div className="flex justify-between border-t border-gold/20 pt-2 font-display text-xl font-bold text-espresso">
               <span>Total</span>
-              <span className="text-gold-gradient">{produto.precoLabel}</span>
+              <span className="text-gold-gradient">{total}</span>
             </div>
           </div>
           <p className="mt-4 text-sm leading-snug text-espresso/60">

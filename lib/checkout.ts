@@ -43,6 +43,9 @@ export const PRODUTOS: Record<ProdutoId, Produto> = {
   },
 };
 
+// Quantidade máxima de livros físicos por pedido.
+export const QTD_MAX = 10;
+
 export function isProdutoId(v: unknown): v is ProdutoId {
   return v === "ebook" || v === "fisico";
 }

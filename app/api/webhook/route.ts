@@ -77,7 +77,18 @@ async function enviarEmailPedido(p: MpPayment) {
     return;
   }
 
-  const m = p.metadata || {};
+  // Os dados vêm do formulário do comprador: escapa antes de montar o HTML.
+  const esc = (v: unknown) =>
+    String(v ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  const raw = p.metadata || {};
+  const m: Record<string, string> = Object.fromEntries(
+    Object.entries(raw).map(([k, v]) => [k, esc(v)]),
+  );
+  const qtd = Number(m.qtd) > 0 ? Number(m.qtd) : 1;
   const isEbook = m.produto === "ebook";
   const valor = formatBRL(Number(p.transaction_amount || 0));
   const metodo =
@@ -89,11 +100,11 @@ async function enviarEmailPedido(p: MpPayment) {
 
   const itemNome = isEbook
     ? "Ebook (arquivo digital)"
-    : "Livro físico (edição impressa)";
+    : `Livro físico (edição impressa) × ${qtd}`;
 
   const acao = isEbook
     ? "📎 Envie o arquivo do ebook para o e-mail e o WhatsApp abaixo."
-    : "📦 Pode despachar o livro para o endereço abaixo.";
+    : `📦 Pode despachar ${qtd > 1 ? qtd + " livros" : "o livro"} para o endereço abaixo.`;
 
   const blocoEndereco = isEbook
     ? ""
@@ -127,7 +138,7 @@ async function enviarEmailPedido(p: MpPayment) {
     <p style="font-size:12px;color:#998">E-mail automático do site — pagamento confirmado pelo Mercado Pago.</p>
   </div>`;
 
-  const subject = `${isEbook ? "📎" : "📦"} Pedido aprovado (${isEbook ? "ebook" : "físico"}) — ${m.nome || "cliente"} · ${valor}`;
+  const subject = `${isEbook ? "📎" : "📦"} Pedido aprovado (${isEbook ? "ebook" : "físico"}) — ${String(raw.nome || "cliente")} · ${valor}`;
 
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",

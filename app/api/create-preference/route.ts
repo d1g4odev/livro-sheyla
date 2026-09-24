@@ -6,7 +6,7 @@
 // O preço é FIXADO no servidor a partir de PRODUTOS — nunca confiar no cliente.
 
 import { NextResponse } from "next/server";
-import { PRODUTOS, isProdutoId } from "@/lib/checkout";
+import { PRODUTOS, QTD_MAX } from "@/lib/checkout";
 
 export const dynamic = "force-dynamic";
 
@@ -27,11 +27,15 @@ export async function POST(request: Request) {
   }
 
   const s = (v: unknown) => (typeof v === "string" ? v.trim() : "");
-  const produtoId = s(b.produto);
-  if (!isProdutoId(produtoId)) {
+  // Só o livro físico passa por aqui — o ebook é vendido na Amazon.
+  if (s(b.produto) !== "fisico") {
     return NextResponse.json({ error: "Produto inválido." }, { status: 400 });
   }
-  const produto = PRODUTOS[produtoId];
+  const produto = PRODUTOS.fisico;
+  const qtd = Math.floor(Number(b.qtd));
+  if (!Number.isFinite(qtd) || qtd < 1 || qtd > QTD_MAX) {
+    return NextResponse.json({ error: "Quantidade inválida." }, { status: 400 });
+  }
 
   // validação mínima
   const obrigatorios = ["nome", "email", "whats"];
@@ -55,6 +59,7 @@ export async function POST(request: Request) {
 
   const metadata: Record<string, string> = {
     produto: produto.id,
+    qtd: String(qtd),
     nome: s(b.nome),
     email: s(b.email),
     whatsapp: s(b.whats),
@@ -77,7 +82,7 @@ export async function POST(request: Request) {
       {
         title: produto.titulo,
         description: produto.descricao,
-        quantity: 1,
+        quantity: qtd,
         unit_price: produto.preco,
         currency_id: "BRL",
       },
@@ -91,7 +96,8 @@ export async function POST(request: Request) {
       failure: `${baseUrl}/erro`,
     },
     auto_return: "approved",
-    notification_url: `${baseUrl}/api/webhook`,
+    // source_news=webhooks: só o Webhook (não o IPN antigo) avisa — evita e-mail duplicado.
+    notification_url: `${baseUrl}/api/webhook?source_news=webhooks`,
     statement_descriptor: "LIVRO SHEYLA",
     payment_methods: {
       excluded_payment_types: [{ id: "ticket" }], // sem boleto: só Pix e Cartão

@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import CheckoutForm from "@/components/CheckoutForm";
-import { isProdutoId } from "@/lib/checkout";
+import { LINKS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Checkout",
@@ -16,7 +16,10 @@ export default async function CheckoutPage({
   searchParams: Promise<{ produto?: string }>;
 }) {
   const { produto } = await searchParams;
-  if (!isProdutoId(produto)) redirect("/#oferta");
+  // O ebook é vendido na Amazon; aqui o checkout é só do livro físico.
+  if (produto === "ebook") {
+    redirect(LINKS.amazonEbook.startsWith("http") ? LINKS.amazonEbook : "/#oferta");
+  }
 
   return (
     <main className="flex-1 bg-cream">
@@ -39,7 +42,7 @@ export default async function CheckoutPage({
           </span>
         </div>
       </header>
-      <CheckoutForm produtoId={produto} />
+      <CheckoutForm produtoId="fisico" />
     </main>
   );
 }
