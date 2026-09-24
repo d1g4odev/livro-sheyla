@@ -58,7 +58,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso text-cream">
         <Backdrop variant="dark" imageOpacity={0.45} />
         <PhotoBleed
-          src="/livro/sheyla-biblia.jpg"
+          src="/livro/sheyla-biblia-hd.jpg"
           side="right"
           opacity={0.42}
           position="50% 25%"
@@ -197,7 +197,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-20 text-cream md:py-28">
         <Backdrop variant="dark" imageOpacity={0.22} />
         <PhotoBleed
-          src="/livro/sheyla-biblia.jpg"
+          src="/livro/sheyla-biblia-hd.jpg"
           side="left"
           opacity={0.4}
           position="50% 25%"
@@ -278,7 +278,7 @@ export default function Home() {
           <Reveal className="shrink-0">
             <div className="relative size-44 overflow-hidden rounded-full border-2 border-gold/50 shadow-[0_20px_40px_-20px_rgba(34,23,8,0.6)]">
               <Image
-                src="/livro/sheyla-rosto.jpg"
+                src="/livro/sheyla-avatar.jpg"
                 alt="Sheyla Gracielle"
                 fill
                 sizes="176px"
@@ -428,7 +428,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-espresso py-24 text-center text-cream md:py-32">
         <Backdrop variant="dark" imageOpacity={0.35} />
         <PhotoBleed
-          src="/livro/sheyla-biblia.jpg"
+          src="/livro/sheyla-biblia-hd.jpg"
           side="right"
           opacity={0.42}
           position="50% 20%"
