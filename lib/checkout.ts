@@ -43,6 +43,10 @@ export const PRODUTOS: Record<ProdutoId, Produto> = {
   },
 };
 
+// Livro físico à venda? Estoque esgotado: false esconde o físico do site
+// inteiro e bloqueia o checkout. Voltou o estoque, é só trocar para true.
+export const FISICO_DISPONIVEL = false;
+
 // Quantidade máxima de livros físicos por pedido.
 export const QTD_MAX = 10;
 

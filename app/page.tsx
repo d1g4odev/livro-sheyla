@@ -177,7 +177,7 @@ export default function Home() {
 
           {/* ficha do livro */}
           <Reveal delay={0.2}>
-            <div className="mt-14 grid gap-8 border-t border-gold/25 pt-10 sm:grid-cols-3">
+            <div className={`mt-14 grid gap-8 border-t border-gold/25 pt-10 ${stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
               {stats.map((s) => (
                 <div key={s.label} className="flex flex-col items-center gap-1 text-center">
                   <span className="font-display text-5xl font-bold text-gold-gradient">
@@ -327,7 +327,7 @@ export default function Home() {
         <Backdrop variant="cream" />
         <div className="relative mx-auto max-w-5xl px-6">
           <SectionHeader script={offer.script} title={offer.title} />
-          <div className="mt-14 grid items-stretch gap-8 md:grid-cols-2">
+          <div className={`mt-14 grid items-stretch gap-8 ${offer.formats.length > 1 ? "md:grid-cols-2" : "mx-auto max-w-md"}`}>
             {offer.formats.map((f, i) => (
               <Reveal key={f.name} delay={i * 0.12} className="h-full">
                 <article

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { PRECOS } from "@/lib/content";
+import { FISICO_DISPONIVEL } from "@/lib/checkout";
 
 export default function StickyBuyBar() {
   const [show, setShow] = useState(false);
@@ -38,7 +39,7 @@ export default function StickyBuyBar() {
                 Sempre Quis Te Chamar de Pai
               </p>
               <p className="text-base italic opacity-90">
-                a partir de {PRECOS.ebook}
+                {FISICO_DISPONIVEL ? "a partir de" : "ebook por"} {PRECOS.ebook}
               </p>
             </div>
             <a

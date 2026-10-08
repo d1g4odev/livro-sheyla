@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Sempre Quis Te Chamar de Pai",
   },
   description:
-    "Livro cristão de Sheyla Gracielle: o testemunho real de uma mulher que atravessou rejeição, traição e divórcio até conhecer Deus como Pai. 22 capítulos de fé, perdão e restauração. Disponível em ebook e livro físico.",
+    "Livro cristão de Sheyla Gracielle: o testemunho real de uma mulher que atravessou rejeição, traição e divórcio até conhecer Deus como Pai. 22 capítulos de fé, perdão e restauração. Disponível em ebook na Amazon.",
   keywords: [
     "Sempre Quis Te Chamar de Pai",
     "Sheyla Gracielle",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sempre Quis Te Chamar de Pai, livro de Sheyla Gracielle",
     description:
-      "Um testemunho de fé, perdão e restauração. A história real de uma mulher que conheceu a rejeição, a traição e o vazio, até descobrir um Pai que a esperava do outro lado da dor. Ebook e livro físico.",
+      "Um testemunho de fé, perdão e restauração. A história real de uma mulher que conheceu a rejeição, a traição e o vazio, até descobrir um Pai que a esperava do outro lado da dor. Ebook na Amazon.",
     url: SITE_URL,
     siteName: "Sempre Quis Te Chamar de Pai",
     images: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Livro Sempre Quis Te Chamar de Pai, de Sheyla Gracielle, em ebook e livro físico",
+        alt: "Livro Sempre Quis Te Chamar de Pai, de Sheyla Gracielle, em ebook",
       },
     ],
     locale: "pt_BR",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sempre Quis Te Chamar de Pai, livro de Sheyla Gracielle",
     description:
-      "Testemunho real de fé, perdão e restauração. Ebook e livro físico.",
+      "Testemunho real de fé, perdão e restauração. Ebook na Amazon.",
     images: ["/og-image.jpg"],
   },
 };

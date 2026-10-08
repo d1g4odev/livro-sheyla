@@ -4,7 +4,7 @@
 //  - preços reais dos dois formatos (em lib/checkout.ts — fonte única)
 // ============================================================
 
-import { PRODUTOS } from "./checkout";
+import { FISICO_DISPONIVEL, PRODUTOS } from "./checkout";
 
 // Ebook na Amazon (Kindle)
 const AMAZON_EBOOK = "https://www.amazon.com.br/dp/B0HHKGKJ5Z";
@@ -29,7 +29,9 @@ export const hero = {
   headline: "Você também cresceu sentindo que precisava merecer amor?",
   sub: "A história real de uma mulher que conheceu a rejeição, a traição e o vazio, até descobrir um Pai que a esperava do outro lado da dor.",
   cta: "Quero ler este testemunho",
-  ctaTrigger: "Ebook ou livro físico · leitura imediata no digital",
+  ctaTrigger: FISICO_DISPONIVEL
+    ? "Ebook ou livro físico · leitura imediata no digital"
+    : "Ebook na Amazon · leitura imediata no Kindle",
 };
 
 export const story = {
@@ -58,7 +60,7 @@ export const forYou = {
 export const stats = [
   { n: "22", label: "capítulos de testemunho real" },
   { n: "116", label: "páginas escritas com verdade vivida" },
-  { n: "2", label: "formatos: ebook e livro impresso" },
+  ...(FISICO_DISPONIVEL ? [{ n: "2", label: "formatos: ebook e livro impresso" }] : []),
 ];
 
 export const preview = {
@@ -134,8 +136,10 @@ export const author = {
 
 export const offer = {
   script: "Garanta o seu",
-  title: "Escolha como quer ler",
-  guarantee: "Livro físico com pagamento seguro via Mercado Pago · ebook vendido pela Amazon",
+  title: FISICO_DISPONIVEL ? "Escolha como quer ler" : "Comece a ler hoje",
+  guarantee: FISICO_DISPONIVEL
+    ? "Livro físico com pagamento seguro via Mercado Pago · ebook vendido pela Amazon"
+    : "Pagamento e entrega feitos pela Amazon",
   formats: [
     {
       tag: "Leitura imediata",
@@ -149,6 +153,8 @@ export const offer = {
       cta: "Comprar o ebook na Amazon",
       ctaHref: LINKS.checkoutEbook,
       secondary: { label: "Dúvidas? Fale com a Sheyla", href: LINKS.whatsapp },
+      // Sozinho na vitrine, o ebook vira o card em destaque.
+      featured: !FISICO_DISPONIVEL,
     },
     {
       tag: "Edição impressa",
@@ -164,7 +170,7 @@ export const offer = {
       secondary: { label: "Pedir pelo WhatsApp da Sheyla", href: LINKS.whatsapp },
       featured: true,
     },
-  ],
+  ].filter((f) => FISICO_DISPONIVEL || f.name !== "Livro físico"),
 };
 
 export const faq = {
@@ -173,19 +179,25 @@ export const faq = {
   items: [
     {
       q: "Como recebo o ebook?",
-      a: "Assim que o pagamento é confirmado, o livro digital chega no seu e-mail. Você pode ler no celular, no computador, no tablet ou enviar para o seu Kindle.",
+      a: "A compra é feita pela Amazon e o livro chega na hora na sua biblioteca Kindle. Você pode ler no celular, no computador, no tablet ou no próprio Kindle (o app é gratuito).",
     },
-    {
-      q: "Em quanto tempo o livro físico chega?",
-      a: "O envio é feito para todo o Brasil. O prazo aparece no checkout de acordo com o seu CEP, e você pode acompanhar o rastreamento.",
-    },
+    ...(FISICO_DISPONIVEL
+      ? [
+          {
+            q: "Em quanto tempo o livro físico chega?",
+            a: "O envio é feito para todo o Brasil. O prazo aparece no checkout de acordo com o seu CEP, e você pode acompanhar o rastreamento.",
+          },
+        ]
+      : []),
     {
       q: "Esse livro é para mim?",
       a: "Se você já carregou rejeição, viveu uma traição, sente um vazio que nada preenche ou simplesmente deseja conhecer Deus como Pai, este livro foi escrito para você.",
     },
     {
       q: "Posso dar de presente?",
-      a: "Pode, sim! É um dos presentes mais bonitos que alguém em um vale pode receber. No pedido pelo WhatsApp, é possível combinar uma dedicatória da autora.",
+      a: FISICO_DISPONIVEL
+        ? "Pode, sim! É um dos presentes mais bonitos que alguém em um vale pode receber. No pedido pelo WhatsApp, é possível combinar uma dedicatória da autora."
+        : "Pode, sim! É um dos presentes mais bonitos que alguém em um vale pode receber.",
     },
     {
       q: "E se eu não gostar?",
@@ -199,5 +211,7 @@ export const finalCta = {
   title: "Há um Pai esperando do outro lado da dor",
   sub: "“Que este livro desperte filhos que, assim como eu, sempre quiseram Te chamar de Pai.” (da Oração de Abertura)",
   cta: "Quero ler este testemunho",
-  ctaTrigger: "Ebook com leitura imediata · livro físico em todo o Brasil",
+  ctaTrigger: FISICO_DISPONIVEL
+    ? "Ebook com leitura imediata · livro físico em todo o Brasil"
+    : "Ebook na Amazon · leitura imediata no Kindle",
 };

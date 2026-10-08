@@ -1,4 +1,5 @@
 import { faq, PRECOS } from "@/lib/content";
+import { FISICO_DISPONIVEL } from "@/lib/checkout";
 
 const SITE_URL = "https://livro-sheyla.vercel.app"; // TODO: trocar quando houver domínio próprio
 
@@ -44,17 +45,21 @@ const graph = {
             priceCurrency: "BRL",
           },
         },
-        {
-          "@type": "Book",
-          bookFormat: "https://schema.org/Paperback",
-          inLanguage: "pt-BR",
-          potentialAction: {
-            "@type": "BuyAction",
-            target: SITE_URL,
-            price: toPrice(PRECOS.fisico),
-            priceCurrency: "BRL",
-          },
-        },
+        ...(FISICO_DISPONIVEL
+          ? [
+              {
+                "@type": "Book",
+                bookFormat: "https://schema.org/Paperback",
+                inLanguage: "pt-BR",
+                potentialAction: {
+                  "@type": "BuyAction",
+                  target: SITE_URL,
+                  price: toPrice(PRECOS.fisico),
+                  priceCurrency: "BRL",
+                },
+              },
+            ]
+          : []),
       ],
     },
     {

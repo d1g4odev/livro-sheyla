@@ -6,11 +6,15 @@
 // O preço é FIXADO no servidor a partir de PRODUTOS — nunca confiar no cliente.
 
 import { NextResponse } from "next/server";
-import { PRODUTOS, QTD_MAX } from "@/lib/checkout";
+import { FISICO_DISPONIVEL, PRODUTOS, QTD_MAX } from "@/lib/checkout";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  if (!FISICO_DISPONIVEL) {
+    return NextResponse.json({ error: "Livro físico esgotado." }, { status: 409 });
+  }
+
   const token = process.env.MP_ACCESS_TOKEN;
   if (!token) {
     return NextResponse.json(

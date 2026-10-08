@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import CheckoutForm from "@/components/CheckoutForm";
 import { LINKS } from "@/lib/content";
+import { FISICO_DISPONIVEL } from "@/lib/checkout";
 
 export const metadata: Metadata = {
   title: "Checkout",
@@ -17,7 +18,8 @@ export default async function CheckoutPage({
 }) {
   const { produto } = await searchParams;
   // O ebook é vendido na Amazon; aqui o checkout é só do livro físico.
-  if (produto === "ebook") {
+  // Físico esgotado: qualquer acesso ao checkout vai pro ebook.
+  if (produto === "ebook" || !FISICO_DISPONIVEL) {
     redirect(LINKS.amazonEbook.startsWith("http") ? LINKS.amazonEbook : "/#oferta");
   }
 
